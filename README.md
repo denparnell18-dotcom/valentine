@@ -1,81 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Be My Valentine? 💘</title>
+  <meta charset="UTF-8" />
+  <title>Be My Valentine 💖</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
 
-<style>
-body {
-height: 100vh;
-margin: 0;
-font-family: Arial, sans-serif;
-background: #ffe6eb;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-overflow: hidden;
-}
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
 
-h1 {
-margin-bottom: 40px;
-font-size: 2.5rem;
-}
+    h1 {
+      margin-bottom: 30px;
+    }
 
-button {
-padding: 15px 30px;
-font-size: 1.2rem;
-border: none;
-border-radius: 10px;
-cursor: pointer;
-position: absolute;
-}
+    button {
+      font-size: 18px;
+      padding: 10px 25px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
 
-#yes {
-background-color: #ff4d6d;
-color: white;
-left: 40%;
-top: 55%;
-}
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+      margin-right: 20px;
+    }
 
-#no {
-background-color: #ccc;
-left: 55%;
-top: 55%;
-transition: left 0.2s ease, top 0.2s ease;
-}
-</style>
+    #no {
+      background-color: #adb5bd;
+      color: white;
+      position: absolute;
+    }
+  </style>
 </head>
 <body>
+  <div class="card">
+    <h1>Will you be my Valentine? 💕</h1>
+    <button id="yes" onclick="yesClicked()">Yes 💘</button>
+    <button id="no">No 🙄</button>
+  </div>
 
-<h1>Will you be my Valentine? 💖</h1>
+  <script>
+    const noBtn = document.getElementById("no");
 
-<button id="yes" onclick="yesClicked()">Yes 💘</button>
-<button id="no">No 😅</button>
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
 
-<script>
-const noButton = document.getElementById("no");
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
 
-noButton.addEventListener("mouseenter", runAway);
-
-function runAway() {
-const maxX = window.innerWidth - noButton.offsetWidth;
-const maxY = window.innerHeight - noButton.offsetHeight;
-
-const randomX = Math.random() * maxX;
-const randomY = Math.random() * maxY;
-
-noButton.style.left = randomX + "px";
-noButton.style.top = randomY + "px";
-}
-
-function yesClicked() {
-document.body.innerHTML = `
-<h1>YAY!!! 💕🥰</h1>
-<p>You’re officially my Valentine 💘</p>
-`;
-}
-</script>
-
+    function yesClicked() {
+      document.body.innerHTML = `
+        <h1 style="color:white; text-align:center;">
+          YAYYY 💖🥰<br>
+          Best. Valentine. Ever.
+        </h1>
+      `;
+    }
+  </script>
 </body>
+</html>
+
 </html>
